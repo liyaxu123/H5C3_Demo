@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位的问题</title>
+  <style>
+    /* 
+    定位：相对定位、绝对定位、固定定位、粘滞定位 
+        1.相对定位：相对于元素自身定位
+        2.绝对定位：相对于已经开启了相对定位的父元素去进行定位的，如果父元素没有相对定位，就会去找祖先元素，看祖先元素是否开启相对定位
+                   如果祖先元素都没有开启相对定位的话，最终元素相对于body进行定位。
+        3.固定定位：相对于浏览器窗口进行定位
+    */
+    .father {
+      width: 200px;
+      height: 800px;
+      background: skyblue;
+      margin: 100px auto;
+      /* 开启相对定位 */
+      position: relative;
+    }
+
+    .son,
+    .son2 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      color: #fff;
+      text-align: center;
+      line-height: 100px;
+      /* 开启绝对定位 */
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+
+    .son2 {
+      /* 固定定位 */
+      /* position: fixed; */
+
+      /* 粘滞定位 */
+      position: sticky;
+      top: 100px;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son">子元素</div>
+    <div class="son2">子元素2</div>
+  </div>
+</body>
+
+</html>

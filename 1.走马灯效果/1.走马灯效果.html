@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1.走马灯效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 200px;
+    }
+
+    .father {
+      width: 600px;
+      height: 113px;
+      border: 5px solid #000;
+      margin: 100px auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    ul {
+      width: 2000px;
+      /* height: 113px; */
+      overflow: hidden;
+      /* position: absolute;
+      top: 0px;
+      left: 0px; */
+      animation: move 3s linear infinite;
+    }
+
+    ul:hover {
+      animation-play-state: paused;
+    }
+
+    li {
+      /* 干掉li标签默认样式 */
+      list-style: none;
+      float: left;
+    }
+
+    /* 定义动画，让图片跑起来 */
+    @keyframes move {
+      /* 通过修改left值去做动画 */
+      0% {
+        /* left: 0; */
+        transform: translateX(0);
+      }
+
+      100% {
+        /* left: -1400px; */
+        transform: translateX(-1400px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 父容器 -->
+  <div class="father">
+    <!-- 子容器 -->
+    <ul>
+      <li><img src="./images/1.jpg" alt="1"></li>
+      <li><img src="./images/2.jpg" alt="1"></li>
+      <li><img src="./images/3.jpg" alt="1"></li>
+      <li><img src="./images/4.jpg" alt="1"></li>
+      <li><img src="./images/5.jpg" alt="1"></li>
+      <li><img src="./images/6.jpg" alt="1"></li>
+      <li><img src="./images/7.jpg" alt="1"></li>
+      <!-- 解决一下父容器空白的情况 -->
+      <li><img src="./images/1.jpg" alt="1"></li>
+      <li><img src="./images/2.jpg" alt="1"></li>
+      <li><img src="./images/3.jpg" alt="1"></li>
+    </ul>
+  </div>
+</body>
+
+</html>
